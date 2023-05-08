@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="340dp"
+        android:layout_height="38dp"
+        android:gravity="center"
+        android:text="@string/mood"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <ImageButton
+        android:id="@+id/imageAngry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="239dp"
+        android:onClick="onClickAngry"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/angry" />
+
+    <ImageButton
+        android:id="@+id/imageBad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="239dp"
+        android:onClick="onClickSad"
+        app:layout_constraintBottom_toTopOf="@+id/textSad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.356"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/bad" />
+
+    <ImageButton
+        android:id="@+id/imageNice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="239dp"
+        android:onClick="onClickSmile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/nice" />
+
+    <ImageButton
+        android:id="@+id/imageOkey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="239dp"
+        android:onClick="onClickOkey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/okey" />
+
+    <TextView
+        android:id="@+id/textAngry"
+        android:layout_width="77dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="332dp"
+        android:text="@string/angry"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/imageAngry"
+        app:layout_constraintStart_toStartOf="@+id/imageAngry"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textSad"
+        android:layout_width="77dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="332dp"
+        android:text="@string/sad"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/imageBad"
+        app:layout_constraintStart_toEndOf="@+id/imageAngry"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textOkey"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginTop="332dp"
+        android:text="@string/okey"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/imageNice"
+        app:layout_constraintStart_toEndOf="@+id/imageBad"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textNice"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginTop="332dp"
+        android:text="@string/nice"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/imageNice"
+        app:layout_constraintStart_toStartOf="@+id/imageNice"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MoodPlus</string>
+    <string name="mood">Как твое настроение?</string>
+    <string name="angry">я злой</string>
+    <string name="sad">я грустный</string>
+    <string name="okey">я нормальный</string>
+    <string name="nice">я веселый</string>
+</resources>
