@@ -13,7 +13,7 @@
         android:theme="@style/Theme.MoodPlus"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity2"
+            android:name=".MainActivity_Graph"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

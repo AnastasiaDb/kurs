@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+
 public class MyDBHelper extends SQLiteOpenHelper {
 
     public MyDBHelper(@Nullable Context context) {
@@ -14,13 +15,12 @@ public class MyDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(MyDataBase.TABLE_STRUCTURE);
+        db.execSQL(MyDataBase.CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(MyDataBase.DROP_TABLE);
         onCreate(db);
-
     }
 }
