@@ -35,10 +35,10 @@ public class MyDBManager {
 
     public List<DayMood> getFromDB() {
         List<DayMood> tempList = new ArrayList<>();
-        Cursor cursor = db.query(MyDataBase.TABLE_NAME,null,null,null,
-                null,null,null);
+        Cursor cursor = db.query(MyDataBase.TABLE_NAME, null, null, null,
+                null, null, null);
 
-        while (cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             int mood = cursor.getInt(cursor.getColumnIndexOrThrow(MyDataBase._MOOD));
             String date = cursor.getString(cursor.getColumnIndexOrThrow(MyDataBase._DATE));
             tempList.add(new DayMood(date, mood));
@@ -47,13 +47,43 @@ public class MyDBManager {
         return tempList;
     }
 
-    public List<DayMood> getFromDB(int gap) {
+    public List<DayMood> getFromDB_7() {
         List<DayMood> tempList = new ArrayList<>();
 
         String[] arr = {};
-        Cursor cursor = db.rawQuery("SELECT *  FROM Mood WHERE _date BETWEEN date('now', '-" + (((gap + 1)*7)-1) + " days') AND date('now', '-" + (((gap)*7)) + " days') ORDER BY _date", arr);
+        Cursor cursor = db.rawQuery("SELECT *  FROM Mood WHERE _date BETWEEN date('now', '-" + (7 - 1) + " days') AND date('now', '-" + 7 + " days') ORDER BY _date", arr);
 
-        while (cursor.moveToNext()){
+        while (cursor.moveToNext()) {
+            int mood = cursor.getInt(cursor.getColumnIndexOrThrow(MyDataBase._MOOD));
+            String date = cursor.getString(cursor.getColumnIndexOrThrow(MyDataBase._DATE));
+            tempList.add(new DayMood(date, mood));
+        }
+        cursor.close();
+        return tempList;
+    }
+
+    public List<DayMood> getFromDB_30() {
+        List<DayMood> tempList = new ArrayList<>();
+
+        String[] arr = {};
+        Cursor cursor = db.rawQuery("SELECT *  FROM Mood WHERE _date BETWEEN date('now', '-" + (30 - 1) + " days') AND date('now', '-" + 30 + " days') ORDER BY _date", arr);
+
+        while (cursor.moveToNext()) {
+            int mood = cursor.getInt(cursor.getColumnIndexOrThrow(MyDataBase._MOOD));
+            String date = cursor.getString(cursor.getColumnIndexOrThrow(MyDataBase._DATE));
+            tempList.add(new DayMood(date, mood));
+        }
+        cursor.close();
+        return tempList;
+    }
+
+    public List<DayMood> getFromDB_all() {
+        List<DayMood> tempList = new ArrayList<>();
+
+        String[] arr = {};
+        Cursor cursor = db.rawQuery("SELECT *  FROM Mood  ORDER BY _date", arr);
+
+        while (cursor.moveToNext()) {
             int mood = cursor.getInt(cursor.getColumnIndexOrThrow(MyDataBase._MOOD));
             String date = cursor.getString(cursor.getColumnIndexOrThrow(MyDataBase._DATE));
             tempList.add(new DayMood(date, mood));
@@ -76,7 +106,7 @@ public class MyDBManager {
         }
     }
 
-    public void closeDB(){
+    public void closeDB() {
         myDBHelper.close();
     }
 }

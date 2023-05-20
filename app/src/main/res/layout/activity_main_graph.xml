@@ -7,8 +7,58 @@
     tools:context=".MainActivity_Graph">
 
     <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/line_chart"
+        android:id="@+id/lineChart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="350dp"
+        android:layout_marginBottom="160dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="417dp"
+        android:layout_height="110dp"
+        android:layout_margin="40dp"
+        android:max="10"
+        android:orientation="horizontal"
+        android:progress="5"
+        android:progressTint="#EABACA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.974">
+
+        <Button
+            android:id="@+id/button_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/week"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/month"
+            app:layout_constraintEnd_toStartOf="@+id/button_week"
+            app:layout_constraintStart_toEndOf="@+id/button_all_time"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_all_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/alltime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
