@@ -24,7 +24,7 @@ import java.util.List;
 
 public class MainActivity_Graph extends AppCompatActivity {
     private LineChart lineChart;
-   private Button button;
+    private Button button;
 
 
     @Override
@@ -38,27 +38,32 @@ public class MainActivity_Graph extends AppCompatActivity {
         // настройка осей
         XAxis xAxis = lineChart.getXAxis();
         YAxis yAxis = lineChart.getAxisLeft();
-        yAxis.setAxisMinimum(1f); // установка минимального значения для оси Y
-       // lineChart.getAxisRight().setEnabled(false); // отключение правой оси
+        yAxis.setAxisMinimum(0f); // установка минимального значения для оси Y
+        yAxis.setAxisMaximum(10f); // установка максимального значения для оси Y
+        // lineChart.getAxisRight().setEnabled(false); // отключение правой оси
 
         // добавление данных на график
         List<Entry> entries = new ArrayList<>();
-        entries.add(new Entry(0, 60)); // точка 1, x=0, y=60
-        entries.add(new Entry(1, 80)); // точка 2, x=1, y=80
-        entries.add(new Entry(2, 70)); // точка 3, x=2, y=70
+        entries.add(new Entry(0, 5));
+        entries.add(new Entry(2, 1));
+        entries.add(new Entry(3, 8));
+        entries.add(new Entry(5, 3));
+        entries.add(new Entry(6, 10));
         LineDataSet lineDataSet = new LineDataSet(entries, "Line Chart");
         lineDataSet.setDrawValues(true); // включение отображения значений точек на графике
 
         // настройка цвета линии и маркера для точек
         lineDataSet.setColor(Color.RED);
-        lineDataSet.setCircleColor(Color.RED);
+        lineDataSet.setCircleRadius(5);
+        lineDataSet.setLineWidth(2);
+        lineDataSet.setCircleColor(Color.BLACK);
 
         // создание объекта LineData и установка его на график
         LineData lineData = new LineData(lineDataSet);
         lineChart.setData(lineData);
 
         // форматирование значений оси X (для примера, установим месяца в качестве меток на оси X)
-        final String[] week = new String[]{"Пн","Вт","Ср","Чт","Пт","Сб","Вс"};
+        final String[] week = new String[]{"Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"};
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getFormattedValue(float value) {

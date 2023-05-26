@@ -4,4 +4,5 @@
     <string name="alltime">все время</string>
     <string name="week">неделя</string>
     <string name="month">месяц</string>
+    <string name="myMood">Мое настроение</string>
 </resources>
